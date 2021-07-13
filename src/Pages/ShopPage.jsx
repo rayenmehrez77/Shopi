@@ -9,7 +9,7 @@ import Product from "../Components/Product.jsx";
 
 const ShopPage = () => {
   return (
-    <div className="border-t-2  text-center bg-gray-100 pb-32">
+    <div className="border-t-2  text-center bg-gray-100 pb-16">
       <div className="bg-gray-200 py-9">
         <h1 className="text-3xl font-bold text-gray-800 uppercase">Shop</h1>
       </div>
