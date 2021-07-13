@@ -3,8 +3,8 @@ import { ShoppingBagIcon } from "@heroicons/react/solid";
 
 const Product = ({ title, image, size, price, oldPrice, state }) => {
   return (
-    <div className="mx-4 my-6 bg-white rounded-lg overflow-hidden shadow text-left  relative">
-      <img src={image} alt={title} className="rounded-md" />
+    <div className="my-6 bg-white rounded-lg overflow-hidden shadow text-left  relative">
+      <img src={image} alt={title} className="rounded-md w-80" />
       <div className="px-4 pt-4">
         <h1 className="text-xl font-medium">{title}</h1>
         <div className="flex space-x-3 py-3">

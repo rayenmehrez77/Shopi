@@ -8,12 +8,12 @@ const Homepage = () => {
   return (
     <div className="border-t-2 py-16 text-center bg-gray-100 ">
       <h1 className="text-4xl font-bold text-gray-800">Our Products</h1>
-      <div className=" mt-16 min-w-xl flex lg:justify-center flex-wrap mb-8  justify-center">
+      <div className=" mt-16 max-w-6xl mx-auto flex lg:justify-between flex-wrap mb-8  justify-center ">
         {products.map((item) => (
           <Product key={item.id} {...item} />
         ))}
       </div>
-      <CustomButton link="shop" color="red">
+      <CustomButton link="store" color="red">
         <span>All products</span>
         <ChevronRightIcon className="h-4 w-4 text-white" />
       </CustomButton>

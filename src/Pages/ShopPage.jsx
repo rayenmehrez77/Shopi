@@ -1,9 +1,15 @@
 import React from "react";
-import { AdjustmentsIcon } from "@heroicons/react/outline";
+import {
+  AdjustmentsIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "@heroicons/react/outline";
+import { products } from "../data.js";
+import Product from "../Components/Product.jsx";
 
 const ShopPage = () => {
   return (
-    <div className="border-t-2  text-center bg-gray-100 ">
+    <div className="border-t-2  text-center bg-gray-100 pb-32">
       <div className="bg-gray-200 py-9">
         <h1 className="text-3xl font-bold text-gray-800 uppercase">Shop</h1>
       </div>
@@ -34,6 +40,26 @@ const ShopPage = () => {
                 Price: hight to low
               </option>
             </select>
+          </div>
+          <div className=" mt-16 max-w-6xl mx-auto flex lg:justify-between flex-wrap mb-8  justify-center ">
+            {products.map((item) => (
+              <Product key={item.id} {...item} />
+            ))}
+          </div>
+          <div className="flex mb-12 justify-center space-x-8">
+            <button
+              disabled
+              className="bg-red-400 w-8 h-8 flex justify-center items-center rounded"
+            >
+              <ChevronLeftIcon className="text-white w-6" />
+            </button>
+            <span className="font-inter font-extrabold text-red-500">1</span>
+            <button
+              disabled
+              className="bg-red-400  w-8 h-8 flex justify-center items-center rounded"
+            >
+              <ChevronRightIcon className="text-white w-6" />
+            </button>
           </div>
         </div>
       </main>
