@@ -1,6 +1,7 @@
 import { GlobeIcon } from "@heroicons/react/solid";
 import { motion } from "framer-motion";
 import React from "react";
+import { ArrowCircleLeftIcon } from "@heroicons/react/solid";
 import { Link } from "react-router-dom";
 
 const Sidebar = ({ isOpen, setIsOpen }) => {
@@ -103,7 +104,14 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
       <div
         className="flex-1 bg-black opacity-50"
         onClick={() => setIsOpen(!isOpen)}
-      ></div>
+      >
+        <div
+          className="bg-gray-50 border rounded-full w-8 h-8 -ml-4 mt-8 cursor-pointer"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <ArrowCircleLeftIcon className="h-full w-full text-gray-900" />{" "}
+        </div>
+      </div>
     </motion.div>
   );
 };

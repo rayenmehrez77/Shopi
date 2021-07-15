@@ -9,7 +9,7 @@ const ContactPage = () => {
           Contact us
         </h1>
       </div>
-      <div className="w-4/5 bg-white border rounded shadow-inner min-h-screen md:mx-auto mx-8 mt-12 p-8 text-left">
+      <div className="w-4/5 bg-white border rounded shadow-inner md:mx-auto mx-8 mt-12 p-8 text-left">
         <p className="max-w-md text-left font-medium text-gray-600">
           You can send your questions by filling out the form below and we will
           get back to you as soon as possible.

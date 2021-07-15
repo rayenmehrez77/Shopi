@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   GlobeIcon,
   SearchIcon,
@@ -7,16 +7,14 @@ import {
 import { Link } from "react-router-dom";
 import { MenuIcon } from "@heroicons/react/outline";
 
-const Header = ({ isOpen, setIsOpen }) => {
+const Header = ({ isOpen, setIsOpen, open, setOpen }) => {
   return (
     <div className="w-6xl lg:px-32 pt-4 sm:px-8 sm:pt-8 px-4 ">
       <div className="flex items-center justify-between pb-12">
-        {/* <div className="bg-gray-300  p-2 rounded-full md:hidden inline-block"> */}
         <MenuIcon
-          className=" w-8 h-8 text-gray-600 cursor-pointer outline-none"
+          className=" w-8 h-8 text-gray-600 cursor-pointer outline-none md:hidden inline-block"
           onClick={() => setIsOpen(!isOpen)}
         />
-        {/* </div> */}
         <Link to="/en">
           <img src="/images/logo.svg" alt="logo" />
         </Link>
@@ -30,10 +28,16 @@ const Header = ({ isOpen, setIsOpen }) => {
             <SearchIcon className="h-5 w-5 text-gray-500" />
           </div>
         </div>
-        <ShoppingCartIcon className="h-8 w-8 text-gray-600 md:hidden cursor-pointer" />
+        <ShoppingCartIcon
+          className="h-8 w-8 text-gray-600 md:hidden cursor-pointer"
+          onClick={() => setOpen(!open)}
+        />
         <div className="md:flex items-center hidden">
           <div className="flex space-x-3 items-center border-r-2 pr-2">
-            <ShoppingCartIcon className="h-8 w-8 text-gray-600" />
+            <ShoppingCartIcon
+              className="h-8 w-8 text-gray-600 cursor-pointer"
+              onClick={() => setOpen(!open)}
+            />
             <span className="font-inter font-extrabold text-red-500">
               TND 0.00
             </span>
@@ -57,22 +61,38 @@ const Header = ({ isOpen, setIsOpen }) => {
         </div>
         <nav className="md:inline-block hidden">
           <ul className="flex space-x-5 font-inter font-medium text-gray-600">
-            <li>
+            <li className="hover:bg-gray-200 py-2 px-4 rounded">
               <Link to="/en">Home</Link>
             </li>
-            <li>
+            <li className="hover:bg-gray-200 py-2 px-4 rounded">
               <Link to="/en/store">Store</Link>
             </li>
-            <li>
+            <li className="hover:bg-gray-200 py-2 px-4 rounded">
               <Link to="/en/contact-us">Contact Us</Link>
             </li>
           </ul>
         </nav>
         <div className="items-center space-x-4 md:flex hidden">
-          <img src="/images/vector-1.svg" alt="logo" className="h-6 w-6" />
-          <img src="/images/vector-2.svg" alt="logo" className="h-5 w-5" />
-          <img src="/images/vector-3.svg" alt="logo" className="h-5 w-5" />
-          <img src="/images/vector.svg" alt="logo" className="h-5 w-5" />
+          <img
+            src="/images/vector-1.svg"
+            alt="logo"
+            className="h-6 w-6 cursor-pointer"
+          />
+          <img
+            src="/images/vector-2.svg"
+            alt="logo"
+            className="h-5 w-5 cursor-pointer"
+          />
+          <img
+            src="/images/vector-3.svg"
+            alt="logo"
+            className="h-5 w-5 cursor-pointer"
+          />
+          <img
+            src="/images/vector.svg"
+            alt="logo"
+            className="h-5 w-5 cursor-pointer"
+          />
         </div>
       </div>
     </div>

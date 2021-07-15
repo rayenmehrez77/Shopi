@@ -6,6 +6,7 @@ import {
 } from "@heroicons/react/outline";
 import { products } from "../data.js";
 import Product from "../Components/Product.jsx";
+import Filter from "../Components/Filter.jsx";
 
 const ShopPage = () => {
   return (
@@ -14,8 +15,9 @@ const ShopPage = () => {
         <h1 className="text-3xl font-bold text-gray-800 uppercase">Shop</h1>
       </div>
       <main className="min-h-screen ">
-        <div className="max-w-6xl mx-auto pt-12">
-          <div className="flex justify-between">
+        <div className="w-6xl mx-auto lg:px-32 px-8 pt-8">
+          <Filter />
+          <div className="lg:flex justify-between hidden">
             <button className="flex items-center space-x-2 bg-red-600 py-2 px-4 hover:bg-red-700 text-white cursor-pointer rounded shadow">
               <AdjustmentsIcon className="h-5 w-5" />
               <span className="font-medium">Filter</span>
@@ -41,7 +43,7 @@ const ShopPage = () => {
               </option>
             </select>
           </div>
-          <div className=" mt-16 max-w-6xl mx-auto flex lg:justify-between flex-wrap mb-8  justify-center ">
+          <div className=" mt-16 w-6xl mx-auto flex lg:justify-between flex-wrap mb-8  justify-center ">
             {products.map((item) => (
               <Product key={item.id} {...item} />
             ))}

@@ -8,14 +8,22 @@ import CartPage from "./Pages/CartPage";
 import CheckoutPage from "./Pages/CheckoutPage";
 import Footer from "./Components/Footer";
 import { useState } from "react";
-import Sidebar from "./Components/Sidebar";
+import LeftSidebar from "./Components/LeftSidebar";
+import RightSidebar from "./Components/RightSidebar";
+import MobileNav from "./Components/MobileNav";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <>
-      <Header isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Header
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        open={open}
+        setOpen={setOpen}
+      />
       <Switch>
         <Route exact path="/en" component={Homepage} />
         <Route path="/en/store" component={ShopPage} />
@@ -24,7 +32,14 @@ function App() {
         <Route path="/en/checkout" component={CheckoutPage} />
       </Switch>
       <Footer />
-      {isOpen ? <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} /> : ""}
+      {isOpen ? <LeftSidebar isOpen={isOpen} setIsOpen={setIsOpen} /> : ""}
+      {open ? <RightSidebar open={open} setOpen={setOpen} /> : ""}
+      <MobileNav
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        open={open}
+        setOpen={setOpen}
+      />
     </>
   );
 }
